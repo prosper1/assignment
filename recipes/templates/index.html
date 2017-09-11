@@ -1,0 +1,24 @@
+
+{% extends 'bases.html' %}
+
+
+{% block content %}
+    {% for post in posts %}
+<div class="row block">
+<div class="col-md-2">
+<a href="{% url 'post_detail' pk=post.pk %}">
+	<img src=" {{ post.photo.url }}" width="100%">
+</div>
+<div class="col-md-8">
+	<a href="{% url 'post_detail' pk=post.pk %}"><h4>{{post.title}}</h4></a>
+	<p><strong>prep :</strong> {{ post.prep_time }} <strong>cooks:</strong> {{ post.cooking_time }}<strong>makes:</strong>{{ post.servings }}</p></p>
+	<hr>
+</div>
+</div>
+
+
+
+
+
+{% endfor %}
+{% endblock %}
